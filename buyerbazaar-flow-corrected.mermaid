@@ -1,25 +1,24 @@
 flowchart TD
+
     %% Title
-    title[<b>Complete Content Syndication Process</b>]
-    style title fill:none,stroke:none,color:#333,font-size:18px
-    
+    Title[Complete Content Syndication Process]
+    style Title fill:none,stroke:none,color:#333,font-size:18px
+
     %% Start: CRM Manager submits content
     A[CRM Manager] --> B[Submit Available Movie Data with Producer Details]
     
     %% Content Syndication Manager Process
     B --> C[Content Syndication Manager]
-    
-    %% CS Manager Reports to CBO
-    CBO[CBO] <-- Reports To --- C
+    C --> CBO[Reports to CBO]
     
     %% CS Manager has Buyer Repository
-    C --- D[Buyer Repository]
+    C --> D[Access Buyer Repository]
     
     %% Content Pitching Process
-    C --> E[Pitch Content to Prospective Buyers by Email]
-    E --> F[Buyer Review]
+    C --> E[Pitch Content to Buyers via Email]
+    E --> F[Buyer Reviews Content]
     
-    F --> G{Buyer\nInterested?}
+    F --> G{Buyer Interested?}
     G -->|No| H[Archive for Future Reference]
     G -->|Yes| I[Begin Negotiations]
     
@@ -32,65 +31,59 @@ flowchart TD
     
     %% CBO Approval
     N --> O[Submit Deal for CBO Approval via Email]
-    O --> P{CBO\nApproval?}
-    P -->|No| Q[Revise Terms - Email Communication]
+    O --> P{CBO Approval?}
+    P -->|No| Q[Revise Terms via Email]
     Q --> J
-    
-    P -->|Yes| R[Communicate Approval to CRM Manager via Email]
+    P -->|Yes| R[Notify CRM Manager of Approval via Email]
     
     %% Producer Approval Process
     R --> S[CRM Manager Communicates with Producer via Email]
-    S --> T{Producer\nApproval?}
+    S --> T{Producer Approval?}
     T -->|No| U[Renegotiate Terms via Email]
     U --> J
-    
-    %% Final Processing
     T -->|Yes| V[Collect Producer Approval Email]
+    
     R --> W[Collect Buyer Approval Email]
     
-    V --> X[Forward Producer & Buyer Approval Emails to Head of Operations]
+    V --> X[Forward Producer & Buyer Approval to Head of Operations]
     W --> X
     
     %% Head of Operations Checkpoint
-    X --> Y{Head of Operations\nApproval?}
+    X --> Y{Head of Operations Approval?}
     Y -->|No| Z[Address Concerns via Email]
     Z --> X
+    Y -->|Yes| AA[Head of Operations Approves via Email]
     
-    %% Google Form Submission
-    Y -->|Yes| AA[HoO Gives Approval via Email]
-    AA --> AB[CRM Manager Shares Necessary Data to CRM Executive via Email or WhatsApp]
-    AB --> AC[CRM Executive Submits Details in Designated Google Form]
+    AA --> AB[CRM Manager Shares Data with CRM Executive]
+    AB --> AC[CRM Executive Submits Google Form]
     
     %% Legal Process
-    AA --> AD[HoO Forwards Email Confirmation to Legal Consultant]
+    AA --> AD[HoO Forwards Confirmation to Legal Consultant]
     AD --> AE[Legal Executive Prepares Agreements]
-    AE --> AF[Send to Legal Consultant for Approval via Email]
+    AE --> AF[Send to Legal Consultant for Approval]
     
-    AF --> AG{Legal Consultant\nApproval?}
-    AG -->|No| AH[Revise Agreement - Email Communication]
+    AF --> AG{Legal Consultant Approval?}
+    AG -->|No| AH[Revise Agreement via Email]
     AH --> AF
+    AG -->|Yes| AI[Send Agreement to Producer & Buyer]
     
-    AG -->|Yes| AI[Email Agreement to Producer and Buyer for Review]
-    
-    AI --> AJ{Changes Required from\nBuyer/Producer?}
+    AI --> AJ{Changes Required by Buyer/Producer?}
     AJ -->|No| AM[Proceed to Execution]
-    
-    AJ -->|Yes| AK{Minor\nChanges?}
-    AK -->|Yes| AL[CRM/CS Manager Approves with Legal Team via Email]
+    AJ -->|Yes| AK{Minor Changes?}
+    AK -->|Yes| AL[CRM/CS Manager Approves with Legal via Email]
     AL --> AI
-    
     AK -->|No| AN[Request HoO Approval via Email]
-    AN --> AO[HoO Consults with CBO via Email]
+    AN --> AO[HoO Consults with CBO]
     AO --> AP{Approved?}
-    AP -->|No| AQ[Renegotiate Terms via Email]
+    AP -->|No| AQ[Renegotiate Terms]
     AQ --> J
     AP -->|Yes| AR[Update Agreement]
     AR --> AI
     
     %% Final Execution
-    AM --> AS[Legal Team Executes Agreement with Buyer and Producer Directly Over Zoho Sign or In Person]
-    AS --> AT[Entire Coordination on Signature Process Handled by Legal Department]
+    AM --> AS[Legal Team Executes via Zoho Sign or In-Person]
+    AS --> AT[Legal Department Handles Signature Coordination]
     
     %% Key Note
-    note[All approvals and escalations must be done through email only]
-    style note fill:#f9f9f9,stroke:#333,stroke-width:1px
+    Note[All approvals and escalations must be done through email only]
+    style Note fill:#f9f9f9,stroke:#333,stroke-width:1px

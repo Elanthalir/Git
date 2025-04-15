@@ -1,0 +1,84 @@
+flowchart TD
+    %% Lead Generation Process
+    A[Lead Generation] --> A1[Incoming Calls]
+    A[Lead Generation] --> A2[Social Media Channels]
+    A[Lead Generation] --> A3[Existing Database Random Calls]
+    
+    A1 --> B[CRM/Ops Executive]
+    A2 --> B[CRM/Ops Executive]
+    A3 --> B[CRM/Ops Executive]
+    
+    B --> C[Fill Lead Particulars]
+    C --> D[Share Details to CRM Manager]
+    
+    D --> E{More Details\nRequired?}
+    E -->|Yes| F[Contact Producer Again]
+    F --> G[Fix Appointment for CRM Manager]
+    E -->|No| H[CRM Manager]
+    G --> H
+    
+    %% Data Analyst Role
+    DA[Data Analyst] <--> H
+    DA --> DA1[Work with CRM Manager on Producer Details Gathering]
+    DA --> DA2[Record Movie Related Information]
+    DA --> DA3[Streamline Missing Data for Separate Information Source]
+    
+    %% CRM Manager Reports to CEO
+    CEO[CEO] <-- Reports To --- H
+    
+    %% Core Process
+    H --> I[Review Content Details]
+    I --> J[Meet the Producer]
+    J --> K[Onboard Content]
+    
+    K --> L{Onboarding\nMethod?}
+    L -->|Marketplace| M[Producer Logs in Through Marketplace]
+    L -->|Mail| N[Submit Details in Google Form]
+    
+    N --> N1{Who Submits\nGoogle Form?}
+    N1 -->|Data Analyst| N2[Data Analyst Submits Form]
+    N1 -->|CRM/Ops Executive| N3[CRM/Ops Executive Submits Form]
+    
+    N2 --> O[Legal Executive Prepares LOA]
+    N3 --> O
+    O --> P[Share LOA with CRM Manager]
+    P --> Q[Send LOA & Undertaking to Producer]
+    Q --> R[Complete Onboarding]
+    M --> R
+    
+    R --> S[Register Data in Content Sheet]
+    S --> T[Communicate to Buyer Team]
+    
+    %% Affiliated Services Process
+    J --> AF[Pitch Affiliated Services]
+    AF --> AF1[Digital Presence for a Movie]
+    AF --> AF2[Digital Marketing of a Film]
+    AF --> AF3[Antipiracy of the Movie]
+    AF --> AF4[Copyright Services]
+    
+    %% Send Quotation and Approval Process
+    AF1 --> QA[CRM Manager Sends Quotation Mail to Producer]
+    AF2 --> QA
+    AF3 --> QA
+    AF4 --> QA
+    
+    QA --> APP[Get Producer Approval]
+    
+    %% Service-specific Processes After Approval
+    APP --> PROC1[Copyright Services Process]
+    PROC1 --> CP1[Share Producer Details to Legal Consultant]
+    CP1 --> CP2[Legal Consultant Initiates Process]
+    
+    APP --> PROC2[Digital Marketing Process]
+    PROC2 --> DM1[Get Cost from COO]
+    DM1 --> DM2[Share Details to Producer for Approval]
+    DM2 --> DM3[CC COO in Communication]
+    DM3 --> DM4[CRM/Ops Executive Implements with Vendor]
+    
+    APP --> PROC3[Digital Presence Process]
+    PROC3 --> DP1[Send Approval Mail with Producer Details to CRM/Ops Executive]
+    DP1 --> DP2[CRM/Ops Executive Implements]
+    
+    APP --> PROC4[Antipiracy Process]
+    PROC4 --> AP1[Get Cost Approval and Required NOC from Producer]
+    AP1 --> AP2[Share to CRM/Ops Executive for Execution]

@@ -1,0 +1,96 @@
+flowchart TD
+    %% Title
+    title[<b>Complete Content Syndication Process</b>]
+    style title fill:none,stroke:none,color:#333,font-size:18px
+    
+    %% Start: CRM Manager submits content
+    A[CRM Manager] --> B[Submit Available Movie Data with Producer Details]
+    
+    %% Content Syndication Manager Process
+    B --> C[Content Syndication Manager]
+    
+    %% CS Manager Reports to CBO
+    CBO[CBO] <-- Reports To --- C
+    
+    %% CS Manager has Buyer Repository
+    C --- D[Buyer Repository]
+    
+    %% Content Pitching Process
+    C --> E[Pitch Content to Prospective Buyers by Email]
+    E --> F[Buyer Review]
+    
+    F --> G{Buyer\nInterested?}
+    G -->|No| H[Archive for Future Reference]
+    G -->|Yes| I[Begin Negotiations]
+    
+    %% Negotiation Process
+    I --> J[Negotiate Deal Terms via Email]
+    J --> K[Discuss Type of Rights]
+    K --> L[Agree on Tenure]
+    L --> M[Set Content Delivery Date]
+    M --> N[Establish Streaming Date]
+    
+    %% CBO Approval
+    N --> O[Submit Deal for CBO Approval via Email]
+    O --> P{CBO\nApproval?}
+    P -->|No| Q[Revise Terms - Email Communication]
+    Q --> J
+    
+    P -->|Yes| R[Communicate Approval to CRM Manager via Email]
+    
+    %% Producer Approval Process
+    R --> S[CRM Manager Communicates with Producer via Email]
+    S --> T{Producer\nApproval?}
+    T -->|No| U[Renegotiate Terms via Email]
+    U --> J
+    
+    %% Final Processing
+    T -->|Yes| V[Collect Producer Approval Email]
+    R --> W[Collect Buyer Approval Email]
+    
+    V --> X[Forward Producer & Buyer Approval Emails to Head of Operations]
+    W --> X
+    
+    %% Head of Operations Checkpoint
+    X --> Y{Head of Operations\nApproval?}
+    Y -->|No| Z[Address Concerns via Email]
+    Z --> X
+    
+    %% Google Form Submission
+    Y -->|Yes| AA[HoO Gives Approval via Email]
+    AA --> AB[CRM Manager Shares Necessary Data to CRM Executive via Email or WhatsApp]
+    AB --> AC[CRM Executive Submits Details in Designated Google Form]
+    
+    %% Legal Process
+    AA --> AD[HoO Forwards Email Confirmation to Legal Consultant]
+    AD --> AE[Legal Executive Prepares Agreements]
+    AE --> AF[Send to Legal Consultant for Approval via Email]
+    
+    AF --> AG{Legal Consultant\nApproval?}
+    AG -->|No| AH[Revise Agreement - Email Communication]
+    AH --> AF
+    
+    AG -->|Yes| AI[Email Agreement to Producer and Buyer for Review]
+    
+    AI --> AJ{Changes Required from\nBuyer/Producer?}
+    AJ -->|No| AM[Proceed to Execution]
+    
+    AJ -->|Yes| AK{Minor\nChanges?}
+    AK -->|Yes| AL[CRM/CS Manager Approves with Legal Team via Email]
+    AL --> AI
+    
+    AK -->|No| AN[Request HoO Approval via Email]
+    AN --> AO[HoO Consults with CBO via Email]
+    AO --> AP{Approved?}
+    AP -->|No| AQ[Renegotiate Terms via Email]
+    AQ --> J
+    AP -->|Yes| AR[Update Agreement]
+    AR --> AI
+    
+    %% Final Execution
+    AM --> AS[Legal Team Executes Agreement with Buyer and Producer Directly Over Zoho Sign or In Person]
+    AS --> AT[Entire Coordination on Signature Process Handled by Legal Department]
+    
+    %% Key Note
+    note[All approvals and escalations must be done through email only]
+    style note fill:#f9f9f9,stroke:#333,stroke-width:1px
